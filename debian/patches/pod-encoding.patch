@@ -1,0 +1,18 @@
+Description: declare POD encoding in Messages.pm
+ Without this pod2man complains about high-bit characters
+Author: Damyan Ivanov <dmn@debian.org>
+Forwarded: no
+Last-Update: 2019-01-18
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/lib/CGI/FormBuilder/Messages.pm
++++ b/lib/CGI/FormBuilder/Messages.pm
+@@ -6,6 +6,8 @@
+ 
+ package CGI::FormBuilder::Messages;
+ 
++=encoding UTF-8
++
+ =head1 NAME
+ 
+ CGI::FormBuilder::Messages - Localized message support for FormBuilder
