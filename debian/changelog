@@ -1,5 +1,530 @@
-template-repository (1.0-1) unstable; urgency=medium
+libcgi-formbuilder-perl (3.10-6) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + libcgi-formbuilder-perl: Add Multi-Arch: foreign.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 15 Oct 2022 18:19:55 +0100
+
+libcgi-formbuilder-perl (3.10-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper dependency to >= 9, since that's what is used in
+    debian/compat.
+  * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+  * Update standards version to 4.4.1, no changes needed.
+  * Update standards version to 4.5.0, no changes needed.
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
+  * Update standards version to 4.6.0, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 04 Jul 2022 17:41:47 +0100
+
+libcgi-formbuilder-perl (3.10-4) unstable; urgency=medium
+
+  * Wrap and sort control file.
+  * Revert to use debhelper compatibility 9,
+    to ease backporting.
+    Relax to build-depend unversioned on debhelper.
+  * Fix typo in previous changelog entry.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 19 Jan 2019 19:12:01 +0100
+
+libcgi-formbuilder-perl (3.10-3) unstable; urgency=medium
+
+  * Team upload
+  * Skip t/1d-messages.t in autopkgtest
+  * Bump debhelper compatibility level to 11
+  * Add upstream/metadata
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 19 Jan 2019 18:15:51 +0100
+
+libcgi-formbuilder-perl (3.10-2) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * Update GitHub URLs to use HTTPS.
+
+  [ Laurent Baillet ]
+  * fix lintian spelling-error-in-description warning
+  * fix lintian file-contains-trailing-whitespace warning
+
+  [ Jonas Smedegaard ]
+  * Update copyright info:
+    + Fix source URLs.
+    + Use https protocol in file format URL.
+    + Extend ownership coverage of packaging.
+    + Rewrap using semantic linefeeds.
+    + Drop comment about missing GPL versions:
+      When unspecified then by GPL logic all are assumed.
+  * Simplify rules:
+    + Stop resolve build-dependencies in rules file.
+    + Stop resolve binary package relations in rules file.
+    + Do copyright-check in maintainer script (not during build).
+      Stop build-depend on licensecheck.
+    + Use short-form dh sequencer (not cdbs).
+      Stop build-depend on cdbs.
+  * Update watch file:
+    + Fix typo in usage comment.
+    + Use substitution strings.
+  * Set Rules-Requires-Root: no.
+  * Enable autopkgtest.
+  * Stop (build-)depend explicitly on libcgi-pm-perl:
+    Needed version satisfied by perl even in oldstable.
+  * Stop build-depend on dh-buildinfo.
+  * Stop build-depend explicitly on perl.
+  * Declare compliance with Debian Policy 4.3.0.
+  * Drop obsolete lintian override regarding debhelper 9.
+  * Tighten lintian overrides regarding License-Reference.
+  * Update DEB-3 patch headers.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 18 Jan 2019 21:14:34 +0100
+
+libcgi-formbuilder-perl (3.10-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+    + Avoid CGI.pm warning if param() used in list context.
+
+  [ Jonas Smedegaard ]
+  * Declare compliance with Debian Policy 3.9.8.
+  * Modernize Vcs-Git field: Use https URL.
+  * Update git-buildpackage config: Filter any .gitignore file.
+  * Update watch file:
+    + Bump to version 4.
+    + Track MetaCPAN URL (and only that).
+    + Mention gpb --uscan in usage comment.
+  * Stop track upstream source with CDBS (use gpb --uscan instead).
+  * Update copyright info:
+    + Use License-Grant and License-Reference fields.
+      Thanks to Ben Finney.
+  * Add lintian override regarding license in License-Reference field.
+    See bug#786450.
+  * Bump debhelper compatibility level to 9.
+  * Add lintian override regarding debhelper 9.
+  * Update copyright and licensing:
+    + Relicense packaging as GPL3+.
+    + Extend packaging coverage to include recent years.
+  * Drop patch 0004: Fixed upstream.
+  * Unfuzz patch 0007.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 22 Aug 2016 16:45:20 +0200
+
+libcgi-formbuilder-perl (3.09-3) unstable; urgency=medium
+
+  * Team upload.
+  * Add an explicit buildtime and runtime dependency on CGI.pm.
+    Two modules in this distribution have "require CGI;" in their code.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 13 Jun 2015 14:12:06 +0200
+
+libcgi-formbuilder-perl (3.09-2) unstable; urgency=medium
+
+  * Merge patches 0005-0006 into 0004, and adapt to retain support for
+    objects that mimic the CGI.pm API but do not have param_fetch.
+    Closes: bug#769240. Thanks to Simon McVittie.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 15 Nov 2014 15:58:40 +0100
+
+libcgi-formbuilder-perl (3.09-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to use cgit web frontend.
+
+  [ Simon McVittie ]
+  * Add patches from pkgsrc, and an extra similar patch, to avoid
+    warnings about calling CGI->param in list context with recent CGI.pm
+    Closes: bug#766087.
+
+  [ Jonas Smedegaard ]
+  * Declare compliance with Debian Policy 3.9.6.
+  * Bump debhelper compatibility to 8: Needed debhelper satisfied even
+    in oldstable.
+  * Update github part of watch file.
+  * Stop track checksum of upstream tarball.
+  * Drop patch fixing test failures with perl5.18: Applied upstream.
+  * Refresh patches with shortening quilt options.
+  * Relax to build-depend unversioned on cdbs: Needed version satisfied
+    even in oldstable.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 25 Oct 2014 02:04:39 +0200
+
+libcgi-formbuilder-perl (3.08-2) unstable; urgency=low
+
+  * Team upload
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+
+  [ Axel Beckert ]
+  * debian/copyright: migrate pre-1.0 format to 1.0 using "cme fix dpkg-
+    copyright"
+
+  [ Damyan Ivanov ]
+  * Add a patch fixing test failures with perl5.18. Closes: #720959
+  * use canonical VCS URLs
+  * replace cpan.org/modules URL with metacpan one
+  * Avoid using first person in long description
+  * add pod-encoding.patch, declaring POD encoding for Messages.pm
+  * add pod-spelling.patch fixing a small typo in FormBuilder.pod
+  * explicitly build-depend on debhelper >= 7
+  * claim conformance with Policy 3.9.5
+
+ -- Damyan Ivanov <dmn@debian.org>  Fri, 29 Nov 2013 16:57:05 +0200
+
+libcgi-formbuilder-perl (3.08-1) unstable; urgency=low
+
+  * New upstream release.
+
+  [ gregor herrmann ]
+  * Remove debian/source/local-options: abort-on-upstream-changes and
+    unapply-patches are default in dpkg-source since 1.16.1.
+  * Update watch file:
+    + Add CPAN URL.
+
+  [ Jonas Smedegaard ]
+  * Update watch file:
+    + Comment out non-working formbuilder.org URL.
+    + Add github.org URL.
+  * Update copyright file:
+    + Add alternate Github upstream Source URLs.
+    + Add alternate Googlegroups Upstream-Contact URL.
+  * Drop patch now included upstream.
+  * Bump debhelper compatibility level to 7.
+  * Simplify CDBS usage (dependencies satisfied even in oldstable, and
+    cdbs itself need version in stable for other reasons already).
+  * Drop cleanup now properly done upstream.
+  * Extend years of copyright for Debian packaging.
+  * Update package relations:
+    + Build-depend on devscripts.
+    + Relax build-depend unversioned on debhelper (needed version
+      satisfied even in oldstable).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 03 Jan 2012 21:12:11 +0100
+
+libcgi-formbuilder-perl (3.06-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use CDBS perl-makemaker.mk (not deprecated perlmodule.mk).
+    Tighten build-dependency on CDBS.
+  * Update copyright file:
+    + Fix use Comment field (not License-Comments).
+    + Quote license names in comments.
+  * Add patch cherry-picked upstream to fix testsuite.
+  * Update package relations:
+    + Build-depend on and suggest libcgi-ssi-perl.
+    + Make suggestions unversioned and drop conflicts: satisfied even in
+      oldstable.
+    + Maintain all relations using CDBS in rules file.
+  * Stop preserving cruft no long shipped upstream.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 11 Sep 2011 02:55:17 +0200
+
+libcgi-formbuilder-perl (3.05.01-10) unstable; urgency=low
+
+  * Improve package relations:
+    + Relax (drop versioning) for packages satisifed even in oldstable:
+      - libhtml-template-perl
+      - libtemplate-perl
+      - libtext-template-perl
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 08 May 2011 02:51:17 +0200
+
+libcgi-formbuilder-perl (3.05.01-9) unstable; urgency=low
+
+  * Update copyright file:
+    + Rewrite using draft 174 of DEP-5 format.
+    + Fix use initial wildcard Files section.
+    + Rewrap license fields at 72 chars, and shorten comments.
+  * Bump policy compliance to standards-version 3.9.2.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 08 May 2011 02:45:39 +0200
+
+libcgi-formbuilder-perl (3.05.01-8) unstable; urgency=low
+
+  * Shorten Vcs-* stanzas.
+  * Bump Policy compliance to standards-version 3.9.1.
+  * Use source format 3.0 (quilt), and ease building with git-
+    buildpackage: Git-ignore quilt .pc dir, and add source local-
+    options.
+  * Drop locally included CDBS snippets, and local implementation of
+    DEB_MAINTAINER_MODE, all included in main cdbs now.
+  * Simplify declaring package dependencies in rules file.
+  * Extend copyright years in rules file, and refer to FSF website (not
+    postal address).
+  * Rewrite copyright file using draft rev135 of DEP5 format.
+  * Relax build-dependency on cdbs to be unversioned: Required version
+    available even in Debian stable.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 16 Oct 2010 16:27:53 +0200
+
+libcgi-formbuilder-perl (3.05.01-7) unstable; urgency=low
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Changed: Replace versioned (build-)dependency on
+    perl (>= 5.6.0-{12,16}) with an unversioned dependency on perl (as
+    permitted by Debian Policy 3.8.3).
+
+  [ Jonas Smedegaard ]
+  * Add README.source. Drop custom hints about CDBS.
+  * Update local CDBS snippets:
+    + Move dependency cleanup to new local snippet package-relations.mk.
+    + Restructure copyright-check.mk hint output to use machine-readable
+      draft DEP5 format.
+    + Several minor improvements to upstream-tarball.mk.
+    + Fix use underscore (not dash) in internal variable.
+    + Implement fail-source-not-repackaged rule in upstream-tarball.mk.
+  * Add proper licensing header to debian/rules.
+  * Add DEB_MAINTAINER_MODE in debian/rules (thanks to Romain Beauxis).
+  * Packaging moved to Git:
+    + Update Vcs stanzas.
+    + Add git-buildpackage configfile, enabling signed tags and use of
+      pristine-tar.
+    + Preserve some upstream cruft from getting removed on clean.
+    + Stop using svn-upgrade in watch file.
+  * Fix tighten build-dependency on debhelper to 6 or newer, thanks to
+    cdbs dependency resolving.
+  * Rewrite copyright to use DEP5 r54 proposed machine-readable format.
+  * Bump Policy compliance to Standards-Version 3.8.3.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 27 Aug 2009 19:49:22 +0200
+
+libcgi-formbuilder-perl (3.05.01-6) unstable; urgency=medium
+
+  * Set urgency=medium as 3.05.01-6 included a FTBFS bugfix.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 28 Jun 2008 20:29:04 +0200
+
+libcgi-formbuilder-perl (3.05.01-5) unstable; urgency=low
+
+  * Update local cdbs snippets:
+    + Update copyright-check.mk to parse licensecheck output using perl:
+      + No longer randomly drops newlines
+      + More compact hint file (and ordered more like wiki-proposed new
+        copyright syntax).
+      + No longer ignore files without copyright.
+    + Drop wget options broken with recent versions of wget in
+      update-tarball.mk.
+    + Relax copyright-check to only warn by default.  Closes:
+      bug#487055, thanks to Lucas Nussbaum.
+    + Cosmetic updates to README.cdbs-tweaks.
+  * Update debian/copyright-hints.
+  * Bump debhelper compatibility level to 6.
+  * Semi-auto-update debian/control to update build-dependencies:
+      DEB_AUTO_UPDATE_DEBIAN_CONTROL=yes fakeroot debian/rules clean
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 26 Jun 2008 01:19:00 +0200
+
+libcgi-formbuilder-perl (3.05.01-4) UNRELEASED; urgency=low
+
+  * Move build-dependency resolving to debian/rules from debian/control.in.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 21 Feb 2008 01:55:42 +0100
+
+libcgi-formbuilder-perl (3.05.01-3) unstable; urgency=low
+
+  * Really move debian/rules Homepage field as promised in -2 changelog entry.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 20 Feb 2008 23:58:31 +0100
+
+libcgi-formbuilder-perl (3.05.01-2) unstable; urgency=low
+
+  * Pass over maintenance of the package to the Perl group: Change Maintainer,
+    and add myself to Uploaders.
+  * Change debian/watch to use svn-upgrade (not uupdate).
+  * Move Homepage to own field (from pseudo-field in long description).
+  * Update local cdbs snippets:
+    + Major improvements to update-tarball (but none of them affecting this
+      current packaging).
+    + Major improvements to copyright-check, including new versioned
+      build-dependency on devscripts.  Update debian/copyright_hints.
+    + Drop buildcore.mk override.  Set DEB_AUTO_UPDATE_DEBIAN_CONTROL directly
+      instead when needed.
+    + Update debian/README.cdbs-tweaks to no longer mention buildcore.mk
+      override.
+  * Bump up standards-version to 3.7.3 (no changes needed).
+  * Bump dephelper compatibility level to 5.
+  * Fix double cdbs build-dependencies in debian/rules.
+  * Semi-auto-update debian/control to apply changes contained in the above:
+    DEB_AUTO_UPDATE_DEBIAN_CONTROL=yes fakeroot debian/rules clean
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 20 Feb 2008 23:14:28 +0100
+
+libcgi-formbuilder-perl (3.05.01-1) unstable; urgency=low
+
+  * New upstream release.
+    + Fix memory leak affecting Catalyst users.
+  * Update local cdbs snippets:
+    + Add upstream-tarball.mk adding get-orig-source rule and more.
+    + Fix overloading buildcore.mk.
+    + Check copyrights in prebuild (in clean it may choke on not yet
+      cleaned stuff), and make sure it runs only once.
+    + List non-binary files affected if discovering new copyrights.
+    + Update documentation in debian/README.cdbs-tweaks.
+  * Fix debian/watch file:
+    + Fix version mangling (regex implicitly matches against full ver).
+    + Extend main regex to match both tar.gz and tgz used in most recent
+      release (using horrible regex due to limitations in file format).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 21 Apr 2007 21:48:43 +0200
+
+libcgi-formbuilder-perl (3.05-1) unstable; urgency=low
+
+  * Mew upstream release.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 18 Dec 2006 20:08:24 +0100
+
+libcgi-formbuilder-perl (3.04.01-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update local cdbs snippets, and add debian/README.cdbs-tweaks to
+    source package.
+  * Use build-depends (not build-depends-indep), thanks to lintian.
+  * Avoid double build-dependency on perl, thanks to lintian.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 24 Nov 2006 15:08:47 +0100
+
+libcgi-formbuilder-perl (3.03.01-1) unstable; urgency=low
+
+  * New upstream release.
+    + optgroups bugfix for complex arrays.
+    + removal of HTML::Entities support due to utf8 issues. Closes:
+      bug#338369 (thanks to Todd Charron <tcharron@badkarma.mine.nu> for
+      reporting, and to several others for working on workarounds).
+    + new es_ES Messages module with better translations
+    + a patch from Mark Hedges to enable plugin modules for mailresults()
+  * Update local cdbs snippet copyright-check.mk:
+    + Broaden scan to also look for "(c)" by default.
+    + Make egrep options configurable.
+  * Bump up standards-version to 3.7.2 (no changes needed).
+  * Update debian/copyright_hints (nothing remarkable).
+  * Bump up debian/watch to version 3 syntax, and use uversionmangle
+    instead of multiple parantheses (both work using uscan locally, but
+    the later hopefully works with qa.debian.org too).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 28 May 2006 15:47:27 +0200
+
+libcgi-formbuilder-perl (3.03-1) unstable; urgency=low
+
+  * New upstream release.
+  * Separate cdbs debian-control auto-update in local snippet.
+  * Add local cdbs snippets copyright-check and buildinfo.
+  * Tweak debian/watch to handle upstream perlish version numbering.
+  * Make long description even longer: List and describe main features.
+  * Mention homepage (not website) in long description.
+  * Semi-auto-update debian/control.
+  * Update debian/copyright:
+    + Bump up copyright to include 2006.
+    + Change email address to use personal domain (no longer SUN).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 13 Mar 2006 12:12:54 +0100
+
+libcgi-formbuilder-perl (3.02.02-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+  * Remove stray test session files when cleaning.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri,  6 May 2005 02:51:01 +0200
+
+libcgi-formbuilder-perl (3.02.01-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+  * Drop bugfix patch included in new release.
+  * Drop suggesting old abandoned libcgi-fasttemplate-perl.
+  * Use non-pristine source tarball:
+    + Set all files world-readable and owner writable.
+    + Remove patch cruft Field.pm.rej.
+  * Temporarily hadcode upstream version in watch file (we don't want to
+    get stock with 4-digit version numbers).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu,  5 May 2005 16:21:21 +0200
+
+libcgi-formbuilder-perl (3.02-2) unstable; urgency=medium
+
+  * Add upstream patch fixing wrong values shown in static mode.
+  * Set urgency=medium as this is a small bugfix and targeted at sarge.
+  * Suggest libsession-perl (for multipage applications).
+  * Build-depend on (officially Debian-released) templating helper
+    modules and libsession-perl, to run most possible regression tests.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 28 Apr 2005 10:23:27 +0200
+
+libcgi-formbuilder-perl (3.02-1) unstable; urgency=low
+
+  * New upstream release.
+  * Recommend libhtml-parser-perl (contains HTML::Entities used for
+    multibyte HTML character escapes).
+  * Suggest libcgi-fasttemplate-perl (this templating helper module is
+    newly supported but not (yet?) packaged for Debian.
+  * Add upstream website to long description.
+  * Update and improve debian/copyright:
+    + New copyright and licensing text (new email address + covers
+      recent years)
+    + Drop info also included in changelog.
+    + Mention "GNU systems" in leading section.
+    + Declare each topic more strictly.
+    + Mention "licensing info" together with copyright.
+    + Rephrase and add Artistic License to trailing reference to
+      common-licenses, and fix full name of GPL.
+    + Promote upstream mailinglist as alternative contact address.
+  * Improve debian/watch:
+    + Add comment on usage.
+    + Extend regex to cover more possible source names.
+  * Bump up Standards-Version to 3.6.1 (no changes needed).
+  * Enable cdbs debian/rules auto-update (and update copyright).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 20 Apr 2005 10:24:36 +0200
+
+libcgi-formbuilder-perl (2.12-1) unstable; urgency=low
+
+  * New upstream release
+  * Drop email handling patch - included upstream now.
+  * Drop local cdbs hack - included upstream now.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 19 Oct 2003 19:55:04 +0200
+
+libcgi-formbuilder-perl (2.11-2) unstable; urgency=low
+
+  * Include patch from Adam Foxson <afoxson@pobox.com> for more safe
+    email response handling.
+  * Conflict with suggested packages lower than the minimum versions
+    required by the library.
+  * Use local hacked cdbs file perlmodule-vars.mk (officieal one is
+    currently broken).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 22 Aug 2003 16:49:25 +0200
+
+libcgi-formbuilder-perl (2.11-1) unstable; urgency=high
+
+  * New upstream release.
+  * New release contains security fixes, so urgency=high.
+  * Only suggest (not recommend) libhtml-template-perl as the library
+    works fine without it. Also suggest libtemplate-perl and (new to
+    this release) libtext-template-perl.
+  * Add minimal required version to suggested template packages.
+  * Note in debian/copyright that upstream source is also available at
+    cpan.org.
+  * Add watch file (using cpan.org).
+  * Correct build-dependency on debhelper (we use v4 so need to depend
+    on 4.x).
+  * Use (and build-depend on) cdbs.
+  * Standards-version 3.6.0 (no additional changes needed).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 11 Jul 2003 23:37:23 +0200
+
+libcgi-formbuilder-perl (2.07-2) unstable; urgency=low
+
+  * Recommend (and not build-depend) libhtml-template-perl.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 22 Apr 2003 07:30:10 +0200
+
+libcgi-formbuilder-perl (2.07-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 22 Apr 2003 06:56:55 +0200
