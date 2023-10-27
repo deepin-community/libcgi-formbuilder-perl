@@ -1,22 +1,38 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: template-repository
-Source: https://github.com/deepin-community/template-repository
+Upstream-Name: CGI::FormBuilder
+Upstream-Contact: Nathan Wiger <nate@wiger.org>
+                  http://groups.google.com/group/perl-formbuilder
+Source: https://metacpan.org/release/CGI-FormBuilder
+ https://github.com/formbuilder/formbuilder/releases
+ https://github.com/formbuilder/formbuilder.git
+ git://github.com/formbuilder/formbuilder.git
 
 Files: *
-Copyright: 2023 Tsic404 <liuheng@deepin.org>
-License: GPL-2+
- This package is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This package is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
- .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+Copyright: 2000-2006, Nate Wiger <nate@wiger.org>
+  2005-2006, Peter Eichman <peichman@cpan.org>
+License-Grant:
+ This module is free software;
+ you may copy this
+ under the terms of the GNU General Public License,
+ or the Artistic License,
+ copies of which should have accompanied your Perl kit.
+License: Artistic or GPL-1+
+
+Files: debian/*
+Copyright: 2003-2014,2016-2019, Jonas Smedegaard <dr@jones.dk>
+License-Grant:
+ This program is free software;
+ you can redistribute it and/or modify it
+ under the terms of the GNU General Public License
+ as published by the Free Software Foundation;
+ either version 3, or (at your option) any later version.
+License: GPL-3+
+
+License: Artistic
+License-Reference: /usr/share/common-licenses/Artistic
+
+License: GPL-1+
+License-Reference: /usr/share/common-licenses/GPL-1
+
+License: GPL-3+
+License-Reference: /usr/share/common-licenses/GPL-3

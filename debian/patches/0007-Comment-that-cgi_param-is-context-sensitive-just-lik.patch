@@ -1,0 +1,17 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Thu, 16 Oct 2014 10:40:29 +0100
+Subject: Comment that cgi_param is context-sensitive just like param
+Last-Update: 2019-01-18
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/lib/CGI/FormBuilder.pm
++++ b/lib/CGI/FormBuilder.pm
+@@ -1176,6 +1176,8 @@
+ 
+ sub cgi_param {
+     my $self = shift;
++    # This returns a scalar or a list, depending on context, like CGI.pm.
++    # For best results, don't call it with a parameter in list context.
+     $self->{params}->param(@_);
+ }
+ 
